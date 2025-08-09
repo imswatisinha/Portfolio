@@ -1,0 +1,13 @@
+.experience-timeline-section h1{
+    text-align:center
+   }
+
+.experience-timeline-section.dark{
+    color:antiquewhite;
+  }
+
+.experience-timeline-section.light{
+    color:rgb(21, 20, 20);
+    font-weight: 600;
+
+  }

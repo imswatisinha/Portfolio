@@ -1,0 +1,14 @@
+
+  .education-timeline-section h1{
+   text-align:center
+  }
+
+  .education-timeline-section.dark{
+    color:antiquewhite;
+  }
+
+  .education-timeline-section.light{
+    color:rgb(21, 20, 20);
+    font-weight: 600;
+
+  }

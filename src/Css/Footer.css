@@ -1,0 +1,148 @@
+/* Footer Styles */
+
+.footer-cus {
+  background-color: #030320;
+  color: #e4e4e4;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  width: 100%;
+  flex-shrink: 0;
+  z-index: 100000;
+  min-width: 100vw;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  margin: 0.5rem;
+}
+
+.footer-right {
+  border-left: 1px solid #444;
+}
+.footer-left h3,
+.footer-right h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #e4e4e4;
+}
+
+.footer-left p {
+  line-height: 1.5;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-right ul li {
+  margin: 0.25rem 0;
+}
+
+.footer-right ul li a {
+  color: #53a18f;
+  transition: color 0.3s ease;
+}
+
+.footer-right ul li a:hover {
+  color: #e4e4e4;
+} 
+
+.footer-copyright {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  border-top: 1px solid #444;
+  padding-top: 0.75rem;
+  width: 100%;
+}
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+  /* Your CSS rules here */
+  .footer-cus {
+    flex-direction: column;
+    justify-content: center;
+    min-width:100vw ;
+  }
+
+  .footer-right {
+    border-left: 0ch;
+    border-top: 1px solid #444;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .footer-right h3 {
+    margin-top: 1rem;
+  }
+}
+
+.footer-left::after {
+  content: "";
+  width: 5px;
+  height: 100%;
+  background-color: #444;
+}
+
+.footer-right h3,
+.footer-right ul {
+  padding: 0.5rem;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Icons  */
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #030320;
+  flex-direction: row;
+  gap: 0rem;
+  width: 100%;
+  min-width: dvh;
+  position: relative;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #030320;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.box:hover {
+  box-shadow: -3px -3px 7px #03303b, 3px 3px 5px #b2cfd7;
+}
+
+.footer-cus a {
+  pointer-events: auto;
+}
+
+.box .icon {
+  color: rgb(194, 189, 189);
+  background: #030320;
+  font-size: 1.5rem;
+  text-shadow: -3px -3px 7px rgb(2, 224, 249) 
+     3px 3px 5px rgba(94, 104, 121, 0.712);
+  transition: 1s ease;
+  pointer-events: auto;
+}
+
+.box:hover .icon {
+  color: rgb(2, 224, 249);
+  transform: rotate(360deg);
+}
+

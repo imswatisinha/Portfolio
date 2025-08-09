@@ -1,0 +1,67 @@
+{
+  "name": "swati-sinha-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Swati Sinha's personal portfolio showcasing full-stack development skills",
+  "author": "Swati Sinha <swatisinhas15552@gmail.com>",
+  "homepage": "https://imswatisinha.github.io/portfolio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imswatisinha/portfolio.git"
+  },
+  "keywords": ["portfolio", "react", "full-stack", "developer"],
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@react-spring/web": "^9.7.5",
+    "@react-three/drei": "^9.120.6",
+    "@react-three/fiber": "^8.17.12",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.3",
+    "cra-template": "1.2.0",
+    "emailjs-com": "^3.2.0",
+    "lottie-react": "^2.4.0",
+    "motion": "^11.16.4",
+    "react": "^18.3.1",
+    "react-awesome-reveal": "^4.3.1",
+    "react-bootstrap": "^2.10.7",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-lottie": "^1.2.10",
+    "react-router-dom": "^7.1.1",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.83.4",
+    "sass-loader": "^16.0.4",
+    "three": "^0.172.0",
+    "web-vitals": "^4.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "analyze": "npm run build && npx serve -s build",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

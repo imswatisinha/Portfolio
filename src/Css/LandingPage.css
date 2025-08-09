@@ -1,0 +1,244 @@
+
+
+  .wrap-landing-page{
+
+    padding: 1rem;
+    min-width: 100vw;
+    width: 100%;
+    padding:0.5rem;
+    height: 100%;
+
+  }
+
+  .landing-page-main {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .intro {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    text-align: left;
+    width: 80%;
+    justify-content: center;
+
+  }
+  
+  .img-home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    max-width: 50%;
+  }
+  
+  .my-pic {
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .intro {
+    margin-bottom: 2rem;
+  }
+  
+  .intro-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    margin-bottom: 1rem;
+    text-align: left;
+    width:100%;
+  }
+  
+  .intro-heading.dark{
+    color: #05a8f3; 
+  }
+
+  .intro-heading.light{
+    color: #041120; 
+  }
+
+  .my-name.dark{
+    color:rgba(255, 255, 255, 0.902);
+  }
+
+  .my-name.light{
+    color:#05a8f3
+  }
+
+  .intro-subheading {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .intro-subheading.dark{
+    color: rgb(73, 219, 207); 
+  }
+
+  .intro-subheading.light{
+    color:#0b71a1;
+    font-weight: 500;
+  }
+  
+  .img-home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0; 
+    max-width: 50%;
+    
+  }
+
+  /* Responsive Layout */
+  @media (min-width: 992px) {
+    .wrap-landing-page{
+      padding: 2rem;
+
+    }
+
+    .landing-page-main {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+    }
+  
+    .intro {
+      width:35%;   
+    }
+
+  }
+  
+  /* Decrease font size for smaller screens */
+  @media (max-width: 991px) {
+    .name {
+      font-size: 3rem; 
+    }
+  
+    .download-button {
+      font-size: 0.9rem;
+    }
+  
+  }
+  
+  /* For smaller screens (mobile) */
+  @media (max-width: 480px) {
+    .name {
+      font-size: 2.5rem;  
+    }
+  
+    .download-button {
+      font-size: 0.8rem;  
+    }
+
+  }
+  
+  .download-button {
+    background-color: transparent;
+    border: 1px solid #8b949e;
+    border-radius: 5px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-self:flex-start;
+    justify-self:flex-start;
+  }
+  
+  .download-button.light {
+    color: #041120;
+    font-weight: 500;
+    border: 1px solid #041120;
+  }
+  
+  .download-button.dark {
+    color: #58a6ff;
+  }
+  
+  .download-button.dark:hover {
+    background-color: #58a6ff90;
+    color: #ffffff;
+  }
+  
+  .download-button.light:hover {
+    background-color: #041120;
+    color: #ffffff;
+  }
+  
+  .wave {
+    animation-name: wave-animation;
+    animation-duration: 2.1s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+  }
+  
+  @keyframes wave-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes cursor {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(11, 107, 148);
+    }
+  }
+  
+  @keyframes typing {
+    from {
+      width: 100%;
+    }
+    90%,
+    to {
+      width: 0;
+    }
+  }
+  
+  @keyframes slide {
+    33.3333333333% {
+      font-size: 3rem;
+      letter-spacing: 3px;
+    }
+    to {
+      font-size: 0;
+      letter-spacing: 0;
+    }
+  }
+  
+  
