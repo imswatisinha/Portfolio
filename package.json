@@ -4,7 +4,6 @@
   "private": true,
   "description": "Swati Sinha's personal portfolio showcasing full-stack development skills",
   "author": "Swati Sinha <swatisinhas15552@gmail.com>",
-  "homepage": "https://imswatisinha.github.io/Portfolio",
   "repository": {
     "type": "git",
     "url": "https://github.com/imswatisinha/Portfolio.git"
@@ -72,6 +71,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.3.0"
   }
 }
