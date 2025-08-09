@@ -1,16 +1,27 @@
+// Import project images
+import Portfolio from '../assests/ProjectImages/Portfolio.png';
+import PizzaApp from '../assests/ProjectImages/PizzaApp.png';
+import TicTacToe from '../assests/ProjectImages/TicTacToe.jpg';
+import TenzieGame from '../assests/ProjectImages/TenzieGame.jpg';
+import AssemblyEndGame from '../assests/ProjectImages/AssemblyEndGame.jpg';
+import MemeBlast from '../assests/ProjectImages/MemeBlast.jpg';
+import BusinessCard from '../assests/ProjectImages/BusinessCard.jpg';
+import toDoList from '../assests/ProjectImages/toDoList.jpg';
+import ClubManagement from '../assests/ProjectImages/ClubManagement.png';
+
 const projects = [
   {
     name: "Portfolio Website",
-    image: "/ProjectImages/Portfolio.png",
+    image: Portfolio,
     technologies: ["Html", "ReactJS", "CSS", "JavaScript", "Bootstrap"],
     description: "A personal portfolio website to showcase my projects and skills.",
     github: "https://github.com/imswatisinha/portfolio",
-    deployed: "https://swati-sinha-portfolio.vercel.app/",
+    deployed: "https://portfolio-imswatisinha.vercel.app/",
     category: ["Frontend"],
   },
   {
     name: "Pizza App",
-    image: "/ProjectImages/PizzaApp.png",
+    image: PizzaApp,
     technologies: ["Html", "CSS", "JavaScript", "Django", "Bootstrap", "REST APIs", "JQuery"],
     description: "A pizza ordering platform with order tracking and history.",
     github: "https://github.com/ThisIsSurabhiSinha/PizzaApp",
@@ -19,7 +30,7 @@ const projects = [
   },
   {
     name: "Tic Tac Toe",
-    image: "/ProjectImages/TicTacToe.jpg",
+    image: TicTacToe,
     technologies: ["Html", "CSS", "JavaScript", "Bootstrap"],
     description: "A simple Tic Tac Toe game built using frontend technologies.",
     github: "https://github.com/ThisIsSurabhiSinha/TicTacToe",
@@ -28,7 +39,7 @@ const projects = [
   },
   {
     name: "Tenzie Game",
-    image: "/ProjectImages/TenzieGame.jpg",
+    image: TenzieGame,
     technologies: ["Html", "ReactJS", "CSS", "JavaScript", "Bootstrap"],
     description: "A fun dice game built using React.",
     github: "https://github.com/ThisIsSurabhiSinha/tenzie-game",
@@ -37,7 +48,7 @@ const projects = [
   },
   {
     name: "Assembly Endgame",
-    image: "/ProjectImages/AssemblyEndgame.jpg",
+    image: AssemblyEndGame,
     technologies: ["Html", "ReactJS", "CSS", "JavaScript", "Bootstrap"],
     description: "A React-based project showcasing advanced assembly features.",
     github: "https://github.com/ThisIsSurabhiSinha/assembly-endgame",
@@ -46,7 +57,7 @@ const projects = [
   },
   {
     name: "Meme Blast",
-    image: "/ProjectImages/MemeBlast.jpg",
+    image: MemeBlast,
     technologies: ["Html", "ReactJS", "CSS", "JavaScript", "Bootstrap"],
     description: "A fun app for browsing and sharing memes.",
     github: "https://github.com/ThisIsSurabhiSinha/memeBlast",
@@ -55,7 +66,7 @@ const projects = [
   },
   {
     name: "My Business Card",
-    image: "/ProjectImages/BusinessCard.jpg",
+    image: BusinessCard,
     technologies: ["Html", "ReactJS", "CSS", "JavaScript", "Bootstrap"],
     description: "A professional business card app built using React.",
     github: "https://github.com/ThisIsSurabhiSinha/Business-Card",
@@ -64,7 +75,7 @@ const projects = [
   },
   {
     name: "ListEase - ToDo List",
-    image: "/ProjectImages/toDoList.jpg",
+    image: toDoList,
     technologies: ["Html", "CSS", "JavaScript"],
     description: "A simple and efficient ToDo list application for managing daily tasks and productivity. Features include task creation, completion tracking, and local storage.",
     github: "https://github.com/imswatisinha/ToDo",
@@ -73,7 +84,7 @@ const projects = [
   },
   {
     name: "Club Catalyst",
-    image: "/ProjectImages/ClubManagement.png",
+    image: ClubManagement,
     technologies: ["Html", "CSS", "JavaScript", "Django", "Bootstrap", "REST APIs", "JQuery"],
     description: "Club Catalyst is a comprehensive platform designed to manage and streamline club activities within our college. The website facilitates event scheduling, member management, task assignments, and communication, making club operations more efficient and organized.",
     github: "https://github.com/ThisIsSurabhiSinha/ClubManagement",

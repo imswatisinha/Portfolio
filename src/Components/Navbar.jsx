@@ -88,7 +88,7 @@ const Navbar = () => {
           </li>
           <li className={nav_item_cus_class}>
             <a
-              href="/resume.pdf"
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu} 

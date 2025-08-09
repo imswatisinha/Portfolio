@@ -18,6 +18,18 @@
       }
     },
     {
+      "src": "/(resume\\.pdf|favicon\\.png|logo192\\.png|logo512\\.png|manifest\\.json|robots\\.txt)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/ProjectImages/(.*)",
+      "dest": "/ProjectImages/$1"
+    },
+    {
+      "src": "/(.*\\.(png|jpg|jpeg|gif|svg|pdf|ico))",
+      "dest": "/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
