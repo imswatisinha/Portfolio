@@ -87,8 +87,8 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className={nav_item_cus_class}>
-            <NavLink
-              to="/resume.pdf"
+            <a
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu} 
@@ -97,7 +97,7 @@ const Navbar = () => {
                 <FaFileAlt className="nav-item-icon" />
                 <span className={nav_item_text_class}>Resume</span>
               </div>
-            </NavLink>
+            </a>
           </li>
           <li className={nav_item_cus_class}>
             <NavLink
