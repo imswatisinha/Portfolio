@@ -244,7 +244,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Swati Sinha**
 - **Email**: [swatisinhas15552@gmail.com](mailto:swatisinhas15552@gmail.com)
 - **GitHub**: [@imswatisinha](https://github.com/imswatisinha)
-- **LinkedIn**: [Swati Sinha](https://www.linkedin.com/in/swatisinha)
+- **LinkedIn**: [Swati Sinha](https://www.linkedin.com/in/swati-sinha-516b23241/)
 - **Portfolio**: [imswatisinha.github.io/Portfolio](https://imswatisinha.github.io/Portfolio)
 
 ## 🙏 Acknowledgments

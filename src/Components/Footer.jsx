@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
         <div className="box">
           <a
-            href="https://www.linkedin.com/in/swatisinha"
+            href="https://www.linkedin.com/in/swati-sinha-516b23241/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         <div className="box">
           <a
-            href="https://leetcode.com/u/swati_sinha/"
+            href="https://leetcode.com/u/iamswatisinha/"
             target="_blank"
             rel="noopener noreferrer"
           >

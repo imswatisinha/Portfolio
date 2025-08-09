@@ -1,7 +1,7 @@
 import React, { useState , useContext} from "react";
 import ContactForm from "./ContactForm";
 import Modal from "./Modal";
-import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
 import "../Css/Contact.css";
 import { ThemeContext } from "./ThemeContext";
@@ -45,16 +45,19 @@ const Contact = () => {
         <div className={`info-section ${themeClass}`}>
           <h3>Contact Information</h3>
           <p>
-            <FaEnvelope /> <strong>Email:</strong> surabhisinha514@gmail.com
+            <FaEnvelope /> <strong>Email:</strong> swatisinhas15552@gmail.com
+          </p>
+          <p>
+            <FaPhone /> <strong>Phone:</strong> +91-9151539078
           </p>
           <p>
             <FaLinkedin /> <strong>LinkedIn:</strong>{" "}
-            <a href= "https://linkedin.com/in/thisissurabhisinha" target="_blank" rel="noreferrer">
-              <strong>thisissurabhisinha</strong>
+            <a href= "https://www.linkedin.com/in/swati-sinha-516b23241/" target="_blank" rel="noreferrer">
+              <strong>swati-sinha-516b23241</strong>
             </a>
           </p>
           <p>
-            <FaMapMarkerAlt /> <strong>Address:</strong> Uttar Pradesh , India
+            <FaMapMarkerAlt /> <strong>Address:</strong> Kanpur, U.P. 209861, India
           </p>
         </div>
 

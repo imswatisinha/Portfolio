@@ -30,8 +30,8 @@ const Skills = () => {
     {
       title: "Coding Profiles",
       items: [
-        { name: "LeetCode", url: "https://leetcode.com/u/swati_sinha/" },
-        { name: "Codechef", url: "https://www.codechef.com/users/swati64" },
+        { name: "LeetCode", url: "https://leetcode.com/u/iamswatisinha/" },
+        { name: "Codechef", url: "https://www.codechef.com/users/iamswatisinha2" },
         {
           name: "Coding Ninjas",
           url: "https://www.naukri.com/code360/profile/SwatiSinha",
