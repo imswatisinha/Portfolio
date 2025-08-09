@@ -1,10 +1,15 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 
 const ContactForm = ({ onModalOpen, onModalUpdate }) => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isFormFilled, setIsFormFilled] = useState(false); // State to track if any field is filled
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init("XcZoDNkxjLgzk9kIf");
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,8 +33,6 @@ const ContactForm = ({ onModalOpen, onModalUpdate }) => {
       onConfirm: async () => {
         onModalUpdate({ isLoading: true });
 
-        let sentEmails = 0; // Counter to track successfully sent emails
-
         try {
           const templateParams = {
             name: formData.name,
@@ -37,52 +40,38 @@ const ContactForm = ({ onModalOpen, onModalUpdate }) => {
             message: formData.message,
           };
 
-          // Send the first email to Surabhi
-          await emailjs.send( "service_jlh8sf5",
-                         "template_h7xt0ln",
-                         templateParams,
-                         "GMIcmFm0oikgPgsas").then(
-            (response) => {
-              if (response.status === 200 && response.text === "OK") {
-                sentEmails++;
-              }
-            }
+          // Send the first email to Swati (message reception)
+          await emailjs.send(
+            "service_qgx1t06",      // Gmail service ID
+            "template_aem0pjg",     // Contact Us template
+            templateParams
           );
 
-          // Send the second email to visitors
-          await emailjs.send( "service_jlh8sf5",
-                        "template_fkpw8sa",
-                        templateParams,
-                        "GMIcmFm0oikgPgsas").then(
-            (response) => {
-              if (response.status === 200 && response.text === "OK") {
-                sentEmails++;
-              }
-            }
+          // Send the second email to visitor (auto-reply)
+          await emailjs.send(
+            "service_qgx1t06",      // Gmail service ID
+            "template_3o6fseh",     // Auto-Reply template
+            templateParams
           );
+          
+          onModalUpdate({
+            isLoading: false,
+            isConfirmation: false,
+            message: {
+              title: "Success",
+              body: "Your message has been sent successfully!",
+            },
+          });
 
-          // Check if both emails were sent successfully
-          if (sentEmails === 2) {
-            onModalUpdate({
-              isLoading: false,
-              isConfirmation: false,
-              message: {
-                title: "Success",
-                body: "Your message has been sent successfully!",
-              },
-            });
-
-            setFormData({ name: "", email: "", message: "" });
-          } else {
-            throw new Error("One or more emails failed to send");
-          }
+          setFormData({ name: "", email: "", message: "" });
+          
         } catch (error) {
           onModalUpdate({
             isLoading: false,
             isConfirmation: false,
             message: {
               title: "Error",
-              body: "Something went wrong. Please try again.",
+              body: "Failed to send message. Please try again or contact directly.",
             },
           });
         }
