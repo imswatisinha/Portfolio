@@ -4,10 +4,10 @@
   "private": true,
   "description": "Swati Sinha's personal portfolio showcasing full-stack development skills",
   "author": "Swati Sinha <swatisinhas15552@gmail.com>",
-  "homepage": "https://imswatisinha.github.io/portfolio",
+  "homepage": "https://imswatisinha.github.io/Portfolio",
   "repository": {
     "type": "git",
-    "url": "https://github.com/imswatisinha/portfolio.git"
+    "url": "https://github.com/imswatisinha/Portfolio.git"
   },
   "keywords": [
     "portfolio",

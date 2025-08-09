@@ -2,14 +2,14 @@
 
 A modern, responsive personal portfolio website built with React.js showcasing full-stack development skills, projects, and experience.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue)](https://imswatisinha.github.io/portfolio)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/imswatisinha/portfolio)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue)](https://imswatisinha.github.io/Portfolio)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/imswatisinha/Portfolio)
 [![React](https://img.shields.io/badge/React-18.3.1-blue)](https://reactjs.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ## 🚀 Live Demo
 
-**Visit the portfolio:** [https://imswatisinha.github.io/portfolio](https://imswatisinha.github.io/portfolio)
+**Visit the portfolio:** [https://imswatisinha.github.io/Portfolio](https://imswatisinha.github.io/Portfolio)
 
 ## 📋 Table of Contents
 
@@ -113,7 +113,7 @@ portfolio/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/imswatisinha/portfolio.git
+   git clone https://github.com/imswatisinha/Portfolio.git
    cd portfolio
    ```
 
@@ -192,7 +192,7 @@ This creates a `build` folder with optimized production files.
 npm install --save-dev gh-pages
 
 # Add to package.json scripts:
-"homepage": "https://imswatisinha.github.io/portfolio",
+"homepage": "https://imswatisinha.github.io/Portfolio",
 "predeploy": "npm run build",
 "deploy": "gh-pages -d build"
 
@@ -245,7 +245,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Email**: [swatisinhas15552@gmail.com](mailto:swatisinhas15552@gmail.com)
 - **GitHub**: [@imswatisinha](https://github.com/imswatisinha)
 - **LinkedIn**: [Swati Sinha](https://www.linkedin.com/in/swatisinha)
-- **Portfolio**: [imswatisinha.github.io/portfolio](https://imswatisinha.github.io/portfolio)
+- **Portfolio**: [imswatisinha.github.io/Portfolio](https://imswatisinha.github.io/Portfolio)
 
 ## 🙏 Acknowledgments
 
