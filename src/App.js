@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loader from "./Components/Loader";
 import ErrorBoundary from "./Components/ErrorBoundary";
 import { ThemeProvider } from "./Components/ThemeContext";
+import CustomCursor from "./Components/CustomCursor";
 
 // Lazy-loaded components
 const Layout = lazy(() => import("./Components/Layout.jsx"));
@@ -23,6 +24,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider>
+        <CustomCursor />
         <Router>
           <Suspense fallback={<Loader />}>
             <Routes>

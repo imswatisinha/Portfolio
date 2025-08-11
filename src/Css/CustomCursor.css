@@ -1,0 +1,278 @@
+/* High-Performance Custom Cursor Styles */
+.custom-cursor,
+.cursor-follower {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  mix-blend-mode: difference;
+  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease, border-width 0.2s ease;
+}
+
+/* Main Cursor Dot */
+.custom-cursor {
+  width: 6px;
+  height: 6px;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
+}
+
+/* Cursor Follower Ring */
+.cursor-follower {
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  border: 1.5px solid;
+  z-index: 10000;
+}
+
+/* Light Mode Colors */
+.custom-cursor.light {
+  background: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+}
+
+.cursor-follower.light {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.08);
+}
+
+/* Dark Mode Colors */
+.custom-cursor.dark {
+  background: #67e8f9;
+  box-shadow: 0 0 8px rgba(103, 232, 249, 0.6);
+}
+
+.cursor-follower.dark {
+  border-color: #67e8f9;
+  background: rgba(103, 232, 249, 0.08);
+}
+
+/* Pointer State (Interactive Elements) */
+.custom-cursor.pointer {
+  width: 8px;
+  height: 8px;
+  animation: cursorPulse 1.5s ease-in-out infinite;
+}
+
+.cursor-follower.pointer {
+  width: 44px;
+  height: 44px;
+  border-width: 2px;
+  animation: followerExpand 0.3s ease-out;
+}
+
+.cursor-follower.pointer.light {
+  border-color: #ed8936;
+  background: rgba(237, 137, 54, 0.12);
+  box-shadow: 0 0 16px rgba(237, 137, 54, 0.3);
+}
+
+.cursor-follower.pointer.dark {
+  border-color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.3);
+}
+
+/* Text State (Text Elements) */
+.custom-cursor.text {
+  width: 2px;
+  height: 16px;
+  border-radius: 1px;
+  animation: textCursorBlink 1s ease-in-out infinite;
+}
+
+.cursor-follower.text {
+  width: 24px;
+  height: 24px;
+  border-width: 1px;
+  opacity: 0.7;
+}
+
+/* Magnetic State (Special Interactive Elements) */
+.custom-cursor.magnetic {
+  animation: magneticPulse 0.8s ease-in-out infinite;
+}
+
+.cursor-follower.magnetic {
+  animation: magneticGlow 0.8s ease-in-out infinite;
+}
+
+/* Hidden State */
+.custom-cursor.hidden,
+.cursor-follower.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+/* Advanced Animations */
+@keyframes cursorPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0.8;
+  }
+}
+
+@keyframes followerExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes textCursorBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes magneticPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 12px rgba(102, 126, 234, 0.8);
+  }
+}
+
+@keyframes magneticGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 16px rgba(237, 137, 54, 0.3);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 24px rgba(237, 137, 54, 0.5);
+  }
+}
+
+/* Hide Default Cursor */
+* {
+  cursor: none !important;
+}
+
+/* Restore cursor for specific elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+textarea,
+[contenteditable="true"] {
+  cursor: text !important;
+}
+
+/* Loading states */
+.loading * {
+  cursor: wait !important;
+}
+
+/* Disabled states */
+:disabled,
+.disabled {
+  cursor: not-allowed !important;
+}
+
+/* Resize handles */
+.resize-handle {
+  cursor: resize !important;
+}
+
+/* Performance optimizations */
+.custom-cursor,
+.cursor-follower {
+  contain: layout style paint;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Responsive Design - Progressive Enhancement */
+@media (max-width: 1024px) {
+  .custom-cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+  
+  input,
+  textarea,
+  [contenteditable="true"] {
+    cursor: text !important;
+  }
+  
+  button,
+  a,
+  [role="button"],
+  .btn,
+  .link {
+    cursor: pointer !important;
+  }
+  
+  :disabled,
+  .disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+@media (hover: none) {
+  .custom-cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor,
+  .cursor-follower {
+    animation: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .custom-cursor.light {
+    background: #000;
+    box-shadow: 0 0 4px #000;
+  }
+  
+  .cursor-follower.light {
+    border-color: #000;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-cursor.dark {
+    background: #fff;
+    box-shadow: 0 0 4px #fff;
+  }
+  
+  .cursor-follower.dark {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}

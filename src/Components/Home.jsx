@@ -1,7 +1,7 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useContext } from "react";
 import LandingPage from "./LandingPage.jsx";
 import Loader from "./Loader";
-import { ThemeProvider } from "./ThemeContext";
+import { ThemeContext } from "./ThemeContext";
 
 const About = lazy(() => import("./About.jsx"));
 const Contact = lazy(() => import("./Contact.jsx"));
@@ -11,20 +11,20 @@ const Education = lazy(() => import("./Education.jsx"));
 const Experiences = lazy(() => import("./Experiences.jsx"));
 
 const Home = () => {
+  const { isDarkMode, themeUtils } = useContext(ThemeContext);
+
   return (
-    <>
-      <ThemeProvider>
-        <LandingPage />
-        <Suspense fallback={<Loader />}>
-            <About/>
-            <Education/>
-            <Experiences/>
-          <HomeProject />
-          <Skills />
-          <Contact />
-        </Suspense>
-      </ThemeProvider>
-    </>
+    <div className={themeUtils?.getThemeClass('home-container') || `home-container ${isDarkMode ? 'dark' : 'light'}`}>
+      <LandingPage />
+      <Suspense fallback={<Loader />}>
+        <About/>
+        <Education/>
+        <Experiences/>
+        <HomeProject />
+        <Skills />
+        <Contact />
+      </Suspense>
+    </div>
   );
 };
 

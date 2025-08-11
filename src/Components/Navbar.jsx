@@ -1,11 +1,9 @@
 
-import React, { useState ,useContext} from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { NavLink} from "react-router-dom";
 import "../Css/Navbar.css";
 import { ThemeContext } from "./ThemeContext.js"; 
 import {
-  FaBars,
-  FaTimes,
   FaHome,
   FaUser,
   FaProjectDiagram,
@@ -14,13 +12,23 @@ import {
   FaEnvelope,
   FaSun,
   FaMoon,
+  FaGithub,
+  FaLinkedin,
 } from "react-icons/fa"; 
 
 const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext); 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const nav_item_text_class = `nav-item-text ${isDarkMode ? "dark" : "light"}`;
-  const nav_item_cus_class = `nav-item-cus ${isDarkMode ? "dark" : "light"} `;
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -30,110 +38,142 @@ const Navbar = () => {
     setIsMenuOpen(false); 
   };
 
+  const navItems = [
+    { path: "/", icon: FaHome, label: "Home" },
+    { path: "/about", icon: FaUser, label: "About" },
+    { path: "/projects", icon: FaProjectDiagram, label: "Projects" },
+    { path: "/skills", icon: FaCode, label: "Skills" },
+    { path: "/contact", icon: FaEnvelope, label: "Contact" }
+  ];
+
   return (
-    <nav className={`navbar-cus ${isDarkMode ? "dark" : "light"} ${isMenuOpen ? "navbar-cus-show-menu" : ""}`}>
-      <div className={`navbar-brand-cus {nav_item_text_class}`}>
-        <div className="nav-brand-name-wrap">
-          <div className="nav-brand-name">
-            <h2 className="brand-name-first">SWATI</h2>
-            <h2 className="brand-name-second">SWATI</h2>
+    <nav className={`navbar-premium ${isDarkMode ? "dark" : "light"} ${isScrolled ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`}>
+      <div className="navbar-container">
+        {/* Brand Logo */}
+        <div className="navbar-brand">
+          <div className="brand-content">
+            <div className="brand-text">
+              <span className="brand-primary">SWATI</span>
+              <span className="brand-secondary">SINHA</span>
+            </div>
+            <div className="brand-tagline">Full Stack Developer</div>
+          </div>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="nav-menu">
+          <ul className="nav-list">
+            {navItems.map((item, index) => (
+              <li key={index} className="nav-item">
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+                  onClick={closeMenu}
+                >
+                  <item.icon className="nav-icon" />
+                  <span className="nav-text">{item.label}</span>
+                  <div className="nav-indicator"></div>
+                </NavLink>
+              </li>
+            ))}
+            
+            {/* Resume Link */}
+            <li className="nav-item">
+              <a
+                href={`${process.env.PUBLIC_URL}/resume.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-link"
+                onClick={closeMenu}
+              >
+                <FaFileAlt className="nav-icon" />
+                <span className="nav-text">Resume</span>
+                <div className="nav-indicator"></div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Theme Toggle */}
+        <div className="navbar-actions">
+          <button 
+            className="theme-toggle-btn" 
+            onClick={toggleDarkMode}
+            aria-label="Toggle theme"
+          >
+            <div className="theme-toggle-inner">
+              {isDarkMode ? (
+                <FaSun className="theme-icon sun-icon" />
+              ) : (
+                <FaMoon className="theme-icon moon-icon" />
+              )}
+            </div>
+          </button>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="mobile-menu-btn" 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <div className="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isMenuOpen ? "open" : ""}`}>
+        <div className="mobile-menu-content">
+          <div className="mobile-brand">
+            <div className="brand-text">
+              <span className="brand-primary">SWATI</span>
+              <span className="brand-secondary">SINHA</span>
+            </div>
+            <div className="brand-tagline">Full Stack Developer</div>
+          </div>
+          
+          <ul className="mobile-nav-list">
+            {navItems.map((item, index) => (
+              <li key={index} className="mobile-nav-item">
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) => `mobile-nav-link ${isActive ? "active" : ""}`}
+                  onClick={closeMenu}
+                >
+                  <item.icon className="mobile-nav-icon" />
+                  <span className="mobile-nav-text">{item.label}</span>
+                </NavLink>
+              </li>
+            ))}
+            
+            <li className="mobile-nav-item">
+              <a
+                href={`${process.env.PUBLIC_URL}/resume.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-nav-link"
+                onClick={closeMenu}
+              >
+                <FaFileAlt className="mobile-nav-icon" />
+                <span className="mobile-nav-text">Resume</span>
+              </a>
+            </li>
+          </ul>
+
+          <div className="mobile-social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+              <FaLinkedin />
+            </a>
           </div>
         </div>
       </div>
-      <div className="menu-icon" onClick={toggleMenu}>
-        {isMenuOpen ? (
-          <FaTimes style={{ color: "red", fontSize: "1.5rem" }} />
-        ) : (
-          <FaBars style={{ color: "#E4E4E4", fontSize: "1.5rem" }} />
-        )}
-      </div>
-   
-    <div className={`nav-items ${isMenuOpen ? "show-menu" : ""}`}>
-        <ul>
-          <li className={nav_item_cus_class}>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={closeMenu} 
-            >
-              <div className="nav-item-content">
-                <FaHome className="nav-item-icon" />
-                <span className={nav_item_text_class}>Home</span>
-              </div>
-            </NavLink>
-          </li>
-          <li className={nav_item_cus_class}>
-            <NavLink
-              to="/about"
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={closeMenu} 
-            >
-              <div className="nav-item-content">
-                <FaUser className="nav-item-icon" />
-                <span className={nav_item_text_class}>About</span>
-              </div>
-            </NavLink>
-          </li>
-          <li className={nav_item_cus_class}>
-            <NavLink
-              to="/projects"
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={closeMenu}
-            >
-              <div className="nav-item-content">
-                <FaProjectDiagram className="nav-item-icon" />
-                <span className={nav_item_text_class}>Projects</span>
-              </div>
-            </NavLink>
-          </li>
-          <li className={nav_item_cus_class}>
-            <a
-              href={`${process.env.PUBLIC_URL}/resume.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu} 
-            >
-              <div className="nav-item-content">
-                <FaFileAlt className="nav-item-icon" />
-                <span className={nav_item_text_class}>Resume</span>
-              </div>
-            </a>
-          </li>
-          <li className={nav_item_cus_class}>
-            <NavLink
-              to="/skills"
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={closeMenu}
-            >
-              <div className="nav-item-content">
-                <FaCode className="nav-item-icon" />
-                <span className={nav_item_text_class}>Skills</span>
-              </div>
-            </NavLink>
-          </li>
-          <li className={nav_item_cus_class}>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={closeMenu} 
-            >
-              <div className="nav-item-content">
-                <FaEnvelope className="nav-item-icon" />
-                <span className={nav_item_text_class}>Contact</span>
-              </div>
-            </NavLink>
-          </li>
-
-          <li className="theme-toggle" onClick={toggleDarkMode}>
-            {isDarkMode ? (
-              <FaMoon style={{ color: "gray", fontSize: "1.75rem" }} />
-            ) : (
-              <FaSun style={{ color: "orange", fontSize: "1.75rem" }} />
-            )}
-          </li>
-        </ul>
-      
-    </div>
     </nav>
   );
 };

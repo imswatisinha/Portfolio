@@ -2,14 +2,19 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import FloatingActions from "./FloatingActions";
+import NotificationSystem from "./NotificationSystem";
+
 const Layout = () => {
   return (
     <div className="site-wrapper">
-        <Navbar />
+      <Navbar />
       <main className="main-section">
         <Outlet />
       </main>
       <Footer />
+      <FloatingActions />
+      <NotificationSystem />
     </div>
   );
 };
