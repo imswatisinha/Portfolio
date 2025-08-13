@@ -2,7 +2,6 @@
 import Portfolio from '../assests/ProjectImages/Portfolio.png';
 import PizzaApp from '../assests/ProjectImages/PizzaApp.png';
 import TicTacToe from '../assests/ProjectImages/TicTacToe.jpg';
-import BusinessCard from '../assests/ProjectImages/BusinessCard.jpg';
 import toDoList from '../assests/ProjectImages/toDoList.jpg';
 import ClubManagement from '../assests/ProjectImages/ClubManagement.png';
 
