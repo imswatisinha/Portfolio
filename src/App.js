@@ -7,6 +7,7 @@ import Loader from "./Components/Loader";
 import ErrorBoundary from "./Components/ErrorBoundary";
 import { ThemeProvider } from "./Components/ThemeContext";
 import CustomCursor from "./Components/CustomCursor";
+import ScrollToTop from "./Components/ScrollToTop";
 
 // Lazy-loaded components
 const Layout = lazy(() => import("./Components/Layout.jsx"));
@@ -26,6 +27,7 @@ function App() {
       <ThemeProvider>
         <CustomCursor />
         <Router>
+          <ScrollToTop />
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Layout />}>

@@ -1,13 +1,224 @@
-.experience-timeline-section h1{
-    text-align:center
-   }
+/* Premium Experience Section */
+.experience-section {
+  padding: 20px 0 40px 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.05) 0%, 
+    rgba(118, 75, 162, 0.05) 50%, 
+    rgba(240, 147, 251, 0.05) 100%);
+  position: relative;
+  overflow: visible;
+}
 
-.experience-timeline-section.dark{
-    color:antiquewhite;
+.experience-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 40px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header */
+.experience-section .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+.experience-section .section-badge {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(240, 147, 251, 0.15));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
+}
+
+.experience-section .section-badge.light {
+  color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+}
+
+.experience-section .section-badge.dark {
+  color: #764ba2;
+  background: linear-gradient(135deg, rgba(118, 75, 162, 0.2), rgba(240, 147, 251, 0.2));
+}
+
+.experience-section .section-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.experience-section .section-title.light {
+  color: #2d3748;
+}
+
+.experience-section .section-title.dark {
+  color: #f7fafc;
+}
+
+.experience-section .gradient-text {
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.experience-section .section-description {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+.experience-section .section-description.light {
+  color: #4a5568;
+}
+
+.experience-section .section-description.dark {
+  color: #cbd5e0;
+}
+
+/* Stats Section */
+.experience-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.experience-stats .stat-card {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-stats .stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.experience-stats .stat-card:hover::before {
+  left: 100%;
+}
+
+.experience-stats .stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+}
+
+.experience-stats .stat-card.light {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15);
+}
+
+.experience-stats .stat-card.dark {
+  background: rgba(45, 55, 72, 0.8);
+  box-shadow: 0 8px 32px rgba(118, 75, 162, 0.15);
+}
+
+.experience-stats .stat-card h3 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.experience-stats .stat-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.experience-stats .stat-card.light p {
+  color: #4a5568;
+}
+
+.experience-stats .stat-card.dark p {
+  color: #cbd5e0;
+}
+
+/* Timeline Wrapper */
+.experience-section .timeline-wrapper {
+  margin-top: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 80px 0;
   }
 
-.experience-timeline-section.light{
-    color:rgb(21, 20, 20);
-    font-weight: 600;
-
+  .experience-section .section-title {
+    font-size: 2.8rem;
   }
+
+  .experience-section .section-description {
+    font-size: 1.1rem;
+  }
+
+  .experience-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .experience-stats .stat-card {
+    padding: 20px 15px;
+  }
+
+  .experience-stats .stat-card h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-container {
+    padding: 0 15px;
+  }
+
+  .experience-section .section-title {
+    font-size: 2.2rem;
+  }
+
+  .experience-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-stats .stat-card h3 {
+    font-size: 2rem;
+  }
+}

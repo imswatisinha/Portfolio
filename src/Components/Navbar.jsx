@@ -34,8 +34,16 @@ const Navbar = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const closeMenu = () => {
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false);
+    // Ensure scroll to top when menu is closed and navigation happens
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   const navItems = [
@@ -50,13 +58,29 @@ const Navbar = () => {
     <nav className={`navbar-premium ${isDarkMode ? "dark" : "light"} ${isScrolled ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="navbar-container">
         {/* Brand Logo */}
-        <div className="navbar-brand">
+        <div className="navbar-brand" onClick={scrollToTop}>
           <div className="brand-content">
-            <div className="brand-text">
-              <span className="brand-primary">SWATI</span>
-              <span className="brand-secondary">SINHA</span>
+            <div className="brand-logo">
+              <svg className="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#59a3f7" />
+                    <stop offset="50%" stopColor="#667eea" />
+                    <stop offset="100%" stopColor="#764ba2" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M8 12C8 8 12 6 16 8C18 9 19 10 20 12C21 10 22 9 24 8C28 6 32 8 32 12C32 14 30 15 28 15H24C22 15 21 16 20 18C21 20 22 21 24 21H28C30 21 32 22 32 24C32 28 28 30 24 28C22 27 21 26 20 24C19 26 18 27 16 28C12 30 8 28 8 24C8 22 10 21 12 21H16C18 21 19 20 20 18C19 16 18 15 16 15H12C10 15 8 14 8 12Z"
+                  fill="url(#logoGradient)"
+                  className="logo-path"
+                />
+              </svg>
             </div>
-            <div className="brand-tagline">Full Stack Developer</div>
+            <div className="brand-text">
+              <span className="brand-name">S.Sinha</span>
+              <span className="brand-dot">•</span>
+              <span className="brand-role">Developer</span>
+            </div>
           </div>
         </div>
 
@@ -130,10 +154,10 @@ const Navbar = () => {
         <div className="mobile-menu-content">
           <div className="mobile-brand">
             <div className="brand-text">
-              <span className="brand-primary">SWATI</span>
-              <span className="brand-secondary">SINHA</span>
+              <span className="brand-name">S.Sinha</span>
+              <span className="brand-dot">•</span>
+              <span className="brand-role">Developer</span>
             </div>
-            <div className="brand-tagline">Full Stack Developer</div>
           </div>
           
           <ul className="mobile-nav-list">

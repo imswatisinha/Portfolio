@@ -8,37 +8,41 @@ const Skills = () => {
 
   const rows = [
     {
-      title: "Languages",
-      items: ["JavaScript", "Python", "C++", "Java", "C"],
+      title: "Programming Languages",
+      items: ["Python", "JavaScript", "C++", "Java"],
     },
     {
-      title: "Tools & Frameworks",
-      items: ["Django", "Git", "Docker", "VS Code"],
+      title: "Web Development",
+      items: ["HTML", "CSS", "React.js", "MongoDB", "Node.js", "Bootstrap", "Tailwind", "SQL"],
     },
     {
-      title: "Libraries",
-      items: ["React", "Redux", "Bootstrap", "jQuery"],
+      title: "Data Science & AI/ML",
+      items: ["Python", "Machine Learning", "Dataiku", "Natural Language Processing", "Deep Learning"],
     },
     {
-      title: "Web Technologies",
-      items: ["HTML", "CSS"],
+      title: "Tools & Technologies",
+      items: ["Git", "GitHub", "Jupyter Notebook", "Google Colab", "VS Code", "MS Excel", "Anaconda"],
     },
     {
-      title: "DSA & Algorithms",
-      items: ["Sorting", "Graph Algorithms", "DP", "Backtracking"],
+      title: "Backend & Frameworks",
+      items: ["Django", "REST APIs", "SQLite", "pfSense"],
+    },
+    {
+      title: "Coursework",
+      items: ["Data Structures and Algorithms", "DBMS", "OOPS", "Computer Networks", "Operating Systems", "AI", "ML"],
     },
     {
       title: "Coding Profiles",
       items: [
         { name: "LeetCode", url: "https://leetcode.com/u/iamswatisinha/" },
-        { name: "Codechef", url: "https://www.codechef.com/users/iamswatisinha2" },
+        { name: "CodeChef", url: "https://www.codechef.com/users/iamswatisinha2" },
         {
-          name: "Coding Ninjas",
-          url: "https://www.naukri.com/code360/profile/SwatiSinha",
+          name: "LinkedIn",
+          url: "https://linkedin.com/in/swatisinha",
         },
         {
-          name: "GeeksForGeeks",
-          url: "https://www.geeksforgeeks.org/user/swatisinhas15552/",
+          name: "GitHub",
+          url: "https://github.com/imswatisinha",
         },
       ],
     },
@@ -58,19 +62,33 @@ const Skills = () => {
   });
 
   return (
-    <div className={`skills-container ${isDarkMode ? "dark" : "light"}`}>
-      <animated.h2 style={spring}>My Skills</animated.h2>
-      <div className={`skills-content ${isDarkMode ? "dark" : "light"}`}>
+    <div className={`skills-container ${isDarkMode ? "dark" : "light"}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <animated.h2 style={{
+        ...spring,
+        textAlign: 'center',
+        marginBottom: '2rem',
+        fontWeight: 700,
+        fontSize: '2.5rem',
+        letterSpacing: '1px',
+        background: isDarkMode
+          ? 'linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%)'
+          : 'linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        filter: 'drop-shadow(0 2px 8px rgba(33,147,176,0.15))',
+      }}>My Skills</animated.h2>
+      <div className={`skills-content ${isDarkMode ? "dark" : "light"}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         {trail.map((animation, index) => (
           <animated.div
             key={index}
-            style={animation}
+            style={{ ...animation, display: 'flex', justifyContent: 'center', width: '100%' }}
             className={`skill-row ${isDarkMode ? "dark" : "light"}`}
           >
-            <div className={`skill-items ${isDarkMode ? "dark" : "light"}`}>
-              <h3>{rows[index].title}</h3>
+            <div className={`skill-items ${isDarkMode ? "dark" : "light"}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+              <h3 style={{ textAlign: 'center', width: '100%' }}>{rows[index].title}</h3>
               <div
                 className={`skill-item-place ${isDarkMode ? "dark" : "light"}`}
+                style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}
               >
                 {rows[index].title === "Coding Profiles"
                   ? rows[index].items.map((profile, idx) => (
@@ -82,6 +100,7 @@ const Skills = () => {
                         className={`skill-item ${
                           isDarkMode ? "dark" : "light"
                         }`}
+                        style={{ margin: '0.5rem' }}
                       >
                         {profile.name}
                       </a>
@@ -92,6 +111,7 @@ const Skills = () => {
                         className={`skill-item ${
                           isDarkMode ? "dark" : "light"
                         }`}
+                        style={{ margin: '0.5rem' }}
                       >
                         {item}
                       </div>

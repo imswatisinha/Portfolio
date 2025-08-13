@@ -26,21 +26,23 @@ const ProjectCard = ({ project }) => {
         <div className={`card-front ${isDarkMode ? "dark" : "light"}`}>
           <img src={currentProject.image} alt={`${currentProject.name} preview`} />
           <h2>{currentProject.name}</h2>
+          <div className="front-technologies">
+            <h4>Technologies:</h4>
+            <div className="technologies">
+              {currentProject.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className={`techno-item small ${isDarkMode ? "dark" : "light"}`}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Back Side */}
         <div className={`card-back ${isDarkMode ? "dark" : "light"}`}>
-          <h3>Technologies Used:</h3>
-          <div className="technologies">
-            {currentProject.technologies.map((tech, index) => (
-              <span
-                key={index}
-                className={`techno-item ${isDarkMode ? "dark" : "light"}`}
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
           <h4>Description:</h4>
           <p>{currentProject.description}</p>
           <div className= {`project-links ${isDarkMode ? "dark" : "light"}`}>

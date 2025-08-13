@@ -13,16 +13,16 @@
 
 /* Light Mode Navbar */
 .navbar-premium.light {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(248, 250, 252, 0.85);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
 }
 
 /* Dark Mode Navbar */
 .navbar-premium.dark {
-  background: rgba(7, 7, 25, 0.95);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.4);
 }
 
 /* Scrolled state */
@@ -31,13 +31,13 @@
 }
 
 .navbar-premium.scrolled.light {
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  background: rgba(241, 245, 249, 0.95);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12);
 }
 
 .navbar-premium.scrolled.dark {
-  background: rgba(7, 7, 25, 0.98);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 8px 32px rgba(79, 70, 229, 0.3);
 }
 
 /* Navbar Container */
@@ -60,61 +60,179 @@
   display: flex;
   align-items: center;
   z-index: 1001;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .brand-content {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Logo Section */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(89, 163, 247, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(89, 163, 247, 0.2));
+  z-index: 1;
+}
+
+.logo-path {
+  transition: all 0.3s ease;
+}
+
+/* Logo Hover Effects */
+.navbar-brand:hover .brand-logo {
+  transform: scale(1.05) rotate(5deg);
+  background: rgba(89, 163, 247, 0.15);
+  box-shadow: 0 4px 12px rgba(89, 163, 247, 0.3);
+}
+
+.navbar-brand:hover .brand-logo::before {
+  left: 100%;
+}
+
+.navbar-brand:hover .logo-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(89, 163, 247, 0.4));
+}
+
+/* Logo Animation on Load */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.brand-logo {
+  animation: logoEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+/* Dark mode logo adjustments */
+.navbar-premium.dark .brand-logo {
+  background: rgba(118, 75, 162, 0.15);
+}
+
+.navbar-premium.dark .navbar-brand:hover .brand-logo {
+  background: rgba(118, 75, 162, 0.25);
+  box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
+}
+
+.navbar-premium.dark .brand-logo::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .brand-text {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.5rem;
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-weight: 700;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
 }
 
-.brand-primary {
-  font-size: 1.8rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: -0.02em;
+.brand-name {
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.brand-secondary {
-  font-size: 1.8rem;
+.navbar-premium.light .brand-name {
+  color: #1a202c;
+}
+
+.navbar-premium.dark .brand-name {
+  color: #f7fafc;
+}
+
+.brand-dot {
   font-weight: 300;
-  opacity: 0.8;
+  font-size: 1rem;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  display: inline-block;
+  animation: pulse-dot 3s ease-in-out infinite;
 }
 
-.navbar-premium.light .brand-secondary {
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.navbar-premium.light .brand-dot {
+  color: #59a3f7;
+}
+
+.navbar-premium.dark .brand-dot {
+  color: #667eea;
+}
+
+.brand-role {
+  font-weight: 400;
+  font-size: 1rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.navbar-premium.light .brand-role {
   color: #4a5568;
 }
 
-.navbar-premium.dark .brand-secondary {
-  color: #e4e4e4;
-}
-
-.brand-tagline {
-  font-size: 0.75rem;
-  font-weight: 400;
-  margin-top: 0.125rem;
-  opacity: 0.7;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.navbar-premium.light .brand-tagline {
-  color: #718096;
-}
-
-.navbar-premium.dark .brand-tagline {
+.navbar-premium.dark .brand-role {
   color: #a0aec0;
+}
+
+/* Hover effect for brand */
+.navbar-brand:hover .brand-name {
+  opacity: 0.8;
+}
+
+.navbar-brand:hover .brand-dot {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.navbar-brand:hover .brand-role {
+  opacity: 0.9;
 }
 
 /* Desktop Navigation */
@@ -155,7 +273,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(89, 163, 247, 0.1) 0%, rgba(102, 126, 234, 0.1) 50%, rgba(118, 75, 162, 0.1) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 0.75rem;
@@ -167,7 +285,7 @@
 
 .nav-link.active::before {
   opacity: 1;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(89, 163, 247, 0.2) 0%, rgba(102, 126, 234, 0.2) 50%, rgba(118, 75, 162, 0.2) 100%);
 }
 
 .nav-icon {
@@ -190,17 +308,17 @@
 }
 
 .navbar-premium.light .nav-link:hover {
-  color: #667eea;
+  color: #59a3f7;
   transform: translateY(-2px);
 }
 
 .navbar-premium.dark .nav-link:hover {
-  color: #667eea;
+  color: #59a3f7;
   transform: translateY(-2px);
 }
 
 .nav-link.active {
-  color: #667eea !important;
+  color: #59a3f7 !important;
   transform: translateY(-2px);
 }
 
@@ -402,22 +520,22 @@
 }
 
 .mobile-brand .brand-text {
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
-.mobile-brand .brand-primary {
-  font-size: 2.5rem;
+.mobile-brand .brand-name {
+  font-size: 1.5rem;
 }
 
-.mobile-brand .brand-secondary {
-  font-size: 2.5rem;
+.mobile-brand .brand-dot {
+  font-size: 1.2rem;
 }
 
-.mobile-brand .brand-tagline {
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+.mobile-brand .brand-role {
+  font-size: 1.2rem;
 }
 
 /* Mobile Navigation */
@@ -475,18 +593,18 @@
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-  color: #667eea;
+  color: #59a3f7;
   transform: translateX(10px);
 }
 
 .navbar-premium.light .mobile-nav-link:hover,
 .navbar-premium.light .mobile-nav-link.active {
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(89, 163, 247, 0.1);
 }
 
 .navbar-premium.dark .mobile-nav-link:hover,
 .navbar-premium.dark .mobile-nav-link.active {
-  background: rgba(102, 126, 234, 0.2);
+  background: rgba(89, 163, 247, 0.2);
 }
 
 .mobile-nav-icon {
@@ -557,14 +675,30 @@
     padding: 1rem 1.5rem;
   }
   
-  .brand-primary,
-  .brand-secondary {
-    font-size: 1.6rem;
+  .brand-logo {
+    width: 30px;
+    height: 30px;
   }
   
-  .mobile-brand .brand-primary,
-  .mobile-brand .brand-secondary {
-    font-size: 2.25rem;
+  .logo-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .brand-name {
+    font-size: 1.1rem;
+  }
+  
+  .brand-role {
+    font-size: 0.95rem;
+  }
+  
+  .mobile-brand .brand-name {
+    font-size: 1.4rem;
+  }
+  
+  .mobile-brand .brand-role {
+    font-size: 1.1rem;
   }
 }
 
@@ -574,13 +708,26 @@
     padding: 1rem;
   }
   
-  .brand-primary,
-  .brand-secondary {
-    font-size: 1.4rem;
+  .brand-logo {
+    width: 28px;
+    height: 28px;
   }
   
-  .brand-tagline {
-    font-size: 0.7rem;
+  .logo-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .brand-content {
+    gap: 0.5rem;
+  }
+  
+  .brand-name {
+    font-size: 1rem;
+  }
+  
+  .brand-role {
+    font-size: 0.9rem;
   }
   
   .theme-toggle-btn,
@@ -589,9 +736,12 @@
     height: 2.5rem;
   }
   
-  .mobile-brand .brand-primary,
-  .mobile-brand .brand-secondary {
-    font-size: 2rem;
+  .mobile-brand .brand-name {
+    font-size: 1.3rem;
+  }
+  
+  .mobile-brand .brand-role {
+    font-size: 1rem;
   }
   
   .mobile-nav-link {
