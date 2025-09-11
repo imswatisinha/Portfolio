@@ -77,9 +77,9 @@ const Navbar = () => {
               </svg>
             </div>
             <div className="brand-text">
-              <span className="brand-name">S.Sinha</span>
+              <span className="brand-name">SWATI SINHA</span>
               <span className="brand-dot">•</span>
-              <span className="brand-role">Developer</span>
+              <span className="brand-role">Software Developer</span>
             </div>
           </div>
         </div>
