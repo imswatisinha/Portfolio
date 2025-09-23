@@ -123,16 +123,16 @@ const LandingPage = () => {
 
             <Fade delay={400} triggerOnce>
               <p className={`intro-description ${isDarkMode ? "dark" : "light"}`}>
-                Currently pursuing <strong>B.Tech in Computer Science</strong> from MMMUT with <strong>8.25 SGPA</strong>. 
+                Currently pursuing <strong>B.Tech in Computer Science</strong> from MMMUT with <strong>8.73 SGPA</strong>. 
                 Working as <span className="highlight">Data Science Intern at Sabudh Foundation</span> and 
-                <span className="highlight">ISRO Project Intern at IIT Jodhpur</span>, specializing in AI/ML, web development, and cybersecurity.
+                <span className="highlight"> ISRO Project Intern at IIT Jodhpur</span>, specializing in AI/ML, web development, and cybersecurity.
               </p>
             </Fade>
 
             <div className="stats-container">
               <Zoom cascade damping={0.1} delay={600} triggerOnce>
                 <div className={`stat-item ${isDarkMode ? "dark" : "light"}`}>
-                  <span className="stat-number">8.25</span>
+                  <span className="stat-number">8.73</span>
                   <span className="stat-label">SGPA</span>
                 </div>
                 <div className={`stat-item ${isDarkMode ? "dark" : "light"}`}>
