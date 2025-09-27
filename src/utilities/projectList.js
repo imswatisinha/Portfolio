@@ -3,15 +3,7 @@ import Portfolio from '../assests/ProjectImages/Portfolio.png';
 import TicTacToe from '../assests/ProjectImages/TicTacToe.jpg';
 
 const projects = [
-  {
-    name: "GUI-Analyzer ISRO Project",
-    image: "/ProjectImages/GUI-ISRO.png",
-    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Django", "Python"],
-    description: "Working on MIL-STD-1553B protocol analysis and automation of bus controller scheduling evaluation. Developing intuitive UI to visualize real-time behavior of remote terminals and subsystem performance.",
-    github: "https://github.com/imswatisinha/isro-project",
-    deployed: "#",
-    category: ["Fullstack", "Backend", "Security"],
-  },
+ 
   {
     name: "JournalWeb",
     image: "/ProjectImages/JournalWeb.png",
@@ -29,6 +21,25 @@ const projects = [
     github: "https://github.com/imswatisinha/student-performance-predictor",
     deployed: "#",
     category: ["AI/ML", "Backend", "Data Science"],
+  },
+   
+  {
+    name: "SnapStory - Image to Story Generator",
+    image: "/ProjectImages/SnapStory.png",
+    technologies: ["Python", "Streamlit", "OpenAI API", "Computer Vision", "Text-to-Speech", "AI/ML"],
+    description: "An AI-powered application that transforms images into captivating stories with audio narration. Uses advanced computer vision and natural language processing to analyze images and generate creative narratives, complete with voice synthesis for an immersive storytelling experience.",
+    github: "https://github.com/imswatisinha/SnapStory",
+    deployed: "https://swati-snapstory.streamlit.app/",
+    category: ["AI/ML", "Backend", "Data Science"],
+  },
+  {
+    name: "GUI-Analyzer ISRO Project",
+    image: "/ProjectImages/GUI-ISRO.png",
+    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Django", "Python"],
+    description: "Working on MIL-STD-1553B protocol analysis and automation of bus controller scheduling evaluation. Developing intuitive UI to visualize real-time behavior of remote terminals and subsystem performance.",
+    github: "https://github.com/imswatisinha/isro-project",
+    deployed: "#",
+    category: ["Fullstack", "Backend", "Security"],
   },
   {
     name: "Portfolio Website",
