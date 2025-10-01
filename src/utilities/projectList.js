@@ -24,6 +24,15 @@ const projects = [
   },
    
   {
+    name: "My Morning Buddy",
+    image: "/ProjectImages/morningBuddy.png",
+    technologies: ["Python", "Streamlit", "AI/ML", "Web Development", "API Integration"],
+    description: "A personalized morning companion application that provides daily motivation, inspirational thoughts, and productivity features to kickstart your day. Features an intuitive interface with weather updates, daily planning tools, and personalized content to enhance your morning routine.",
+    github: "https://github.com/imswatisinha/MyMorningBuddy",
+    deployed: "https://mymorningbuddy-g9atx39xpzxpiptshtogb4.streamlit.app/",
+    category: ["Frontend", "AI/ML", "Backend"],
+  },
+  {
     name: "SnapStory - Image to Story Generator",
     image: "/ProjectImages/SnapStory.png",
     technologies: ["Python", "Streamlit", "OpenAI API", "Computer Vision", "Text-to-Speech", "AI/ML"],

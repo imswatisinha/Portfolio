@@ -10,7 +10,7 @@ const HomeProject = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
   // Memoize featured projects to prevent unnecessary re-renders
-  const featuredProjects = useMemo(() => projects.slice(0, 4), []);
+  const featuredProjects = useMemo(() => projects.slice(0, 6), []);
 
   return (
     <section 
