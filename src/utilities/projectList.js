@@ -14,6 +14,15 @@ const projects = [
     category: ["Fullstack", "Backend"],
   },
   {
+    name: "YouTube Synthesizer",
+    image: "/ProjectImages/YouTubeSynthesizer.png",
+    technologies: ["Python", "Streamlit", "YouTube API", "Natural Language Processing", "AI/ML", "Data Analysis"],
+    description: "An intelligent YouTube content synthesizer that analyzes and summarizes video content using advanced NLP techniques. Extracts key insights, generates concise summaries, and provides comprehensive analysis of YouTube videos to help users quickly understand video content without watching the entire video.",
+    github: "https://github.com/imswatisinha/YouTube_Synthesizer",
+    deployed: "https://youtubesynthesizer-wfstkfj2cd787cajyetcf5.streamlit.app/",
+    category: ["AI/ML", "Backend", "Data Science"],
+  },
+  {
     name: "Student Performance Predictor",
     image: "/ProjectImages/studentperformance.png",
     technologies: ["Python", "Machine Learning", "Pandas", "Scikit-learn", "Flask", "HTML", "CSS"],
